@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erro 404</title>
+<link rel="icon" href="icons8-erro-96.png">
+<title>Erro-404</title>
 
 <style>
     *{
@@ -20,19 +21,21 @@
         align-items:center;
         background:#f4fdf7;
         overflow:hidden;
+        user-select: none;
     }
 
     .container{
         text-align:center;
+        z-index: 3;
     }
 
-    /* Número 404 animado */
     .error{
         font-size:120px;
         font-weight:bold;
-        color: #00ff73;
+        color: #22fc7dc9;
         position:relative;
         animation: flutuar 2s ease-in-out infinite;
+        z-index: 3;
     }
 
     @keyframes flutuar {
@@ -46,12 +49,14 @@
 
     h2{
         margin-top:10px;
-        color: #00ff73;
+        color: #1a2338;
+        z-index: 3;
     }
 
     p{
         margin-top:8px;
         color:#555;
+        z-index: 3;
     }
 
     /* Botão */
@@ -59,77 +64,107 @@
         margin-top:25px;
         display:inline-block;
         padding:12px 25px;
-        background: #00ff73;
-        color:white;
+        background: linear-gradient(to right, rgb(22, 185, 166), rgb(19, 186, 143), rgb(24, 192, 120));
+        color: white;
+        border-radius: 24px;
         text-decoration:none;
         border-radius:8px;
         transition:0.3s;
         font-weight:bold;
+        border-radius: 24px;
+        z-index: 3;
     }
 
     .btn:hover{
-        background:#4CAF50;
+         background: linear-gradient(to right, rgb(13, 119, 107), rgb(11, 121, 93), rgb(13, 114, 70));
+         border-radius: 24px;
         transform:scale(1.05);
     }
 
-    /* Bolhas decorativas animadas */
-    .circle{
-        position:absolute;
-        border-radius:50%;
-        background:rgba(129,199,132,0.2);
-        animation: subir 8s linear infinite;
-    }
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(85, 233, 92, 0.5);
+    animation: subir 8s linear infinite;
+    z-index:-2;
+    bottom: -150px;
+}
 
-    .circle:nth-child(1){
-        width:120px;
-        height:120px;
-        left:10%;
-        animation-delay:0s;
-    }
 
-    .circle:nth-child(2){
-        width:80px;
-        height:80px;
-        left:70%;
-        animation-delay:2s;
-    }
+.circle:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    left: 10%;
+    animation-delay: 0s;
+}
 
-    .circle:nth-child(3){
-        width:60px;
-        height:60px;
-        left:40%;
-        animation-delay:4s;
-    }
 
-    @keyframes subir{
-        0%{
-            bottom:-150px;
-            opacity:0;
-        }
-        50%{
-            opacity:1;
-        }
-        100%{
-            bottom:110%;
-            opacity:0;
-        }
+.circle:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.circle:nth-child(4) {
+    width: 100px;
+    height: 100px;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.circle:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: 85%;
+    animation-delay: 3s;
+}
+
+@keyframes subir {
+    0% {
+        bottom: -150px;
+        opacity: 0;
+        transform: translateX(0) scale(1);
     }
+    25% {
+        transform: translateX(-20px) scale(1.05);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(20px) scale(1);
+    }
+    75% {
+        transform: translateX(-10px) scale(0.95);
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(0) scale(0.9);
+    }
+}
 
 </style>
 </head>
 
 <body>
-
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-
 <div class="container">
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    
+
     <div class="error">404</div>
     <h2>Página não encontrada</h2>
     <p>Ops! Ainda estou trabalhando nisso.</p>
     <a href="https://fellps018.github.io/Developer-Fullstack-Felipe/" class="btn">Voltar para Home</a>
 </div>
-
 </body>
 </html>
